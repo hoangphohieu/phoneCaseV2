@@ -102,7 +102,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
     app.activeDocument.duplicate("khung "  + (i + 1) + " ngay " + day, false);
     app.doAction("xoay 180", "auto xep file");
     app.doAction("cmyk khung", "auto xep file");
-    var folder1 = Folder("~/Desktop/in an/khay" + (i + 1) + " ngay " + day +" luminous");
+    var folder1 = Folder("~/Desktop/in an/khay" + (i + 1) + " ngay " + day + " glass");
     if (!folder1.exists) { folder1.create(); }
     app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close();
@@ -161,15 +161,10 @@ for (var i = 0; i <= arr.length - 1; i++) {
     // save file
     app.activeDocument.duplicate("in " + (i + 1) + " ngay " + day, false);
     app.doAction("xoay 180", "auto xep file");
-    app.doAction("cmyk ban in", "auto xep file");
+    app.doAction("cmyk ban in glass", "auto xep file");
     app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
-    app.activeDocument.duplicate("white " + (i + 1) + " ngay " + day, false);
-    app.doAction("create white", "auto xep file");
-    app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
-    app.activeDocument.close();
     app.activeDocument.close();
     app.documents["khay.jpg"].close(SaveOptions.DONOTSAVECHANGES);
 } // end 
-
 
 
