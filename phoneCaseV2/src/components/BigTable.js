@@ -76,6 +76,9 @@ class BigTable extends Component {
                         else if (item.phoneCase.trim().toLowerCase().endsWith("ip6") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("ip6s") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6/6s") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("iphone 6/ 6s") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("iphone 6/6 s") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("iphone 6 /6 s") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6 6s") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6") === true
                         ) return { ...item, phoneCase: "i6" }
@@ -153,17 +156,19 @@ class BigTable extends Component {
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("s8plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s8 plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("s8p") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s8+") === true
                         ) return { ...item, phoneCase: "s8plus" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("s9plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s9 plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("s9p") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s9+") === true
                         ) return { ...item, phoneCase: "s9plus" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("s10plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s10 plus") === true
-                              || item.phoneCase.trim().toLowerCase().endsWith("ss10p") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("s10p") === true
                         ) return { ...item, phoneCase: "s10plus" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("note 8") === true
