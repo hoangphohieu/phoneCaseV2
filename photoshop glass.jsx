@@ -164,6 +164,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
     // save file
     app.activeDocument.duplicate("in " + (i + 1) + " ngay " + day, false);
     app.doAction("xoay 180", "auto xep file");
+    app.doAction("lightitup", "auto xep file");
     app.doAction("cmyk ban in glass", "auto xep file");
     app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close();
