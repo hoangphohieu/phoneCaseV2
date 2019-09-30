@@ -81,6 +81,8 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6 /6 s") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6 6s") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("iphone 6s") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("6, 6s") === true
                         ) return { ...item, phoneCase: "i6" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("ip7") === true
@@ -110,6 +112,7 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("6 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6/6s plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6 plus/6s plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("6s plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6/6splus") === true
                         ) return { ...item, phoneCase: "i6plus" }
 
@@ -122,6 +125,7 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 8 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 7 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("ip 7/ip8 plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("ip78p") === true
                         ) return { ...item, phoneCase: "i7plus" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("xr") === true
