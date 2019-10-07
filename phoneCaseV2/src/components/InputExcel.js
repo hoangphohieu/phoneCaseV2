@@ -46,10 +46,10 @@ class InputExcel extends Component {
 
       }
     }
-    
+
     this.setState({
       items: rickDataExcel,
-      
+
     })
 
 
@@ -69,7 +69,7 @@ class InputExcel extends Component {
     dayExcel = dayExcel.slice(3);
     this.setState({ dayExcel: dayExcel, mouthExcel: mouthExcel })
 
-    
+
 
     //Validate whether File is valid Excel file.
     var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xls|.xlsx)$/;
@@ -81,6 +81,7 @@ class InputExcel extends Component {
         if (reader.readAsBinaryString) {
           reader.onload = function (e) {
 
+            console.log(e.target.result);
 
             _this.ProcessExcel(e.target.result);
           };
@@ -108,14 +109,13 @@ class InputExcel extends Component {
 
   render() {
 
-
     return (
       <div className="App ">
-        <input type="file" id="fileinput" className="btn btn-warning" onChange={this.readSingleFile} style={{display:"none"}}/>
+        <input type="file" id="fileinput" className="btn btn-warning" onChange={this.readSingleFile} style={{ display: "none" }} />
         <label htmlFor="fileinput" className="input_exel_file btn btn-warning">File Excel</label>
         <div id="dvExcel" />
-        
-        <Bigtable items={this.state.items} day={this.state.dayExcel} mounth={this.state.mouthExcel}/>
+
+        <Bigtable items={this.state.items} day={this.state.dayExcel} mounth={this.state.mouthExcel} />
       </div>
     );
   }
