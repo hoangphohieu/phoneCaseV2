@@ -39,11 +39,12 @@ class BigTable extends Component {
                         hp20p: { w: 850, h: 1807 },
                         oppoa5: { w: 874, h: 1819 },
                         oneplus6: { w: 862, h: 1807 },
-                        note10: { w: 1000, h: 2000 }, // sai
+                        note10: { w: 850, h: 1783 },
                         note10plus: { w: 909, h: 1913 },
-                        i11: { w: 862, h: 1760 },
-                        i11pro: { w: 862, h: 1760 }, // sai
+                        i11pro: { w: 827, h: 1677 },
+                        i11: { w: 862, h: 1760 }, // sai
                         i11promax: { w: 886, h: 1831 },
+                        hp20: { w: 815, h: 1736 },
                         khay: { w: 28346, h: 15354 }
 
                   }
@@ -88,6 +89,7 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 6s") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6, 6s") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("6,6s") === true
                         ) return { ...item, phoneCase: "i6" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("ip7") === true
@@ -115,6 +117,7 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("6splus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6 splus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6 plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("ip6p") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6/6s plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6 plus/6s plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("6s plus") === true
@@ -127,6 +130,8 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("78 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("8/7 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("7/8plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("7/8 plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("7 / 8 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 8 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 7 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("ip 7/ip8 plus") === true
@@ -138,6 +143,7 @@ class BigTable extends Component {
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("xsmax") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("ipxm") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("xs max") === true
                         ) return { ...item, phoneCase: "imax" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("i11") === true
@@ -160,9 +166,10 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("11 promax") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("11pm") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("11promax") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("11 pro max") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("11 max") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("11max") === true
-                        ) return { ...item, phoneCase: "11promax" }
+                        ) return { ...item, phoneCase: "i11promax" }
 
                         // samsung
                         else if (item.phoneCase.trim().toLowerCase().endsWith("s7") === true
@@ -191,6 +198,7 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("s8 plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s8p") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("s8+") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("ss8p") === true
                         ) return { ...item, phoneCase: "s8plus" }
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("s9plus") === true
@@ -222,6 +230,7 @@ class BigTable extends Component {
                         else if (item.phoneCase.trim().toLowerCase().endsWith("note 10plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("note10plus") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("note 10 plus") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("note 10+") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("ss10np") === true
                         ) return { ...item, phoneCase: "note10plus" }
                         // huwei
@@ -242,6 +251,12 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("hwp20p") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("p20p") === true
                         ) return { ...item, phoneCase: "hp20p" }
+
+                        else if (item.phoneCase.trim().toLowerCase().endsWith("p20") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("hwp20") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("p20") === true
+                        ) return { ...item, phoneCase: "hp20" }
+
 
                         else if (item.phoneCase.trim().toLowerCase().endsWith("mate 20pro") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("mate20p") === true
@@ -291,6 +306,7 @@ class BigTable extends Component {
                               || item.phoneCase === "i11"
                               || item.phoneCase === "i11pro"
                               || item.phoneCase === "i11promax"
+                              || item.phoneCase === "s8plus"
                               || item.phoneCase === "s9plus"
                               || item.phoneCase === "s10plus"
                               || item.phoneCase === "note8"
@@ -300,6 +316,7 @@ class BigTable extends Component {
                               || item.phoneCase === "hp30"
                               || item.phoneCase === "hp30p"
                               || item.phoneCase === "hp20p"
+                              || item.phoneCase === "hp20"
                               || item.phoneCase === "mate20p"
                               || item.phoneCase === "oneplus6"
                               || item.phoneCase === "i6"
@@ -369,12 +386,15 @@ class BigTable extends Component {
                         else if (params === "hp30p") return pixel.hp30p
                         else if (params === "hp30") return pixel.hp30
                         else if (params === "hp20p") return pixel.hp20p
+                        else if (params === "hp20") return pixel.hp20
                         else if (params === "mate20p") return pixel.mate20p
                         else if (params === "oppoa5") return pixel.oppoa5
                         else if (params === "oneplus6") return pixel.oneplus6
                         else if (params === "i11") return pixel.i11
                         else if (params === "i11pro") return pixel.i11pro
                         else if (params === "i11promax") return pixel.i11promax
+                        else if (params === "note10") return pixel.note10
+                        else if (params === "note10plus") return pixel.note10plus
 
                   }
                   // chia khay
@@ -385,6 +405,8 @@ class BigTable extends Component {
                   let j = 0;
 
                   for (let i = 0; i <= items.length - 1; i++) {
+                        console.log(items[i]);
+
                         let hI = items[i].pixel.h;
                         let wI = items[i].pixel.w;
 
