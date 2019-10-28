@@ -19,7 +19,7 @@ class BigTable extends Component {
                         i6plus: { w: 909, h: 1866 },
                         i7plus: { w: 909, h: 1866 },
                         ix: { w: 815, h: 1689 },
-                        ixs: { w: 791, h: 1654 },
+                        ixs: { w: 815, h: 1689 },
                         ixr: { w: 862, h: 1748 },
                         imax: { w: 898, h: 1854 },
                         s7: { w: 803, h: 1655 },

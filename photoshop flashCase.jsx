@@ -22,7 +22,7 @@ var stt = 0;
 
 // for loop
 for (var i = 0; i <= arr.length - 1; i++) {
-    app.documents.add(28346,15354,300,"khay.jpg");
+    app.documents.add(28346, 15354, 300, "khay.jpg");
     hItem = 0;
     wItem = 0;
     yPosition = 0;
@@ -65,7 +65,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
 
 
         app.open(File("D:/DATA/file design/khung.jpg"));
-        app.doAction("crop" + arr[i][j].name+"flash", "auto xep file");
+        app.doAction("crop" + arr[i][j].name + "flash", "auto xep file");
         app.doAction("tao khung", "auto xep file");
         app.activeDocument.artLayers.add();
         app.activeDocument.activeLayer.kind = LayerKind.TEXT;
@@ -105,7 +105,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
     app.activeDocument.duplicate("khung " + (i + 1) + " ngay " + day, false);
     app.doAction("xoay 180", "auto xep file");
     app.doAction("cmyk khung", "auto xep file");
-    var folder1 = Folder("~/Desktop/in an/khay" + (i + 1) + " ngay " + day + " glass");
+    var folder1 = Folder("~/Desktop/in an/khay" + (i + 1) + " ngay " + day + " flase Case");
     if (!folder1.exists) { folder1.create(); }
     app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close();
@@ -150,7 +150,8 @@ for (var i = 0; i <= arr.length - 1; i++) {
             app.open(File("D:/DATA/file design/aaaa.tif"));
 
         }
-        app.doAction("crop" + arr[i][j].name+"flash", "auto xep file");
+        app.doAction("crop" + arr[i][j].name + "flash", "auto xep file");
+        app.doAction("merge layer", "auto xep file");
         app.doAction("duplicate to khay", "auto xep file");
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         app.doAction("move to zero", "auto xep file");
@@ -160,12 +161,73 @@ for (var i = 0; i <= arr.length - 1; i++) {
 
     }
     app.activeDocument.activeLayer.name = "in";
+    app.doAction("lightitup", "auto xep file");
+
+
+    // for loop items flash
+    hItem = 0;
+    wItem = 0;
+    yPosition = 0;
+    xPosition = 0;
+    hLast = 0;
+    wLast = 0;
+
+    for (var j = 0; j <= arr[i].length - 1; j++) {
+        // for (var j = 0; j <= 10; j++) {
+        hItem = arr[i][j].pixel.h;
+        wItem = arr[i][j].pixel.w;
+        if (yPosition + hLast + hItem <= hAll) {
+            if (wLast == wItem) {
+                yPosition = yPosition + hLast;
+                hLast = hItem;
+                wLast = wItem;
+            }
+            else {
+                yPosition = 0;
+                xPosition = xPosition + wLast;
+                hLast = hItem;
+                wLast = wItem;
+            }
+        }
+        else {
+            yPosition = 0;
+            xPosition = xPosition + wLast;
+            hLast = hItem;
+            wLast = wItem;
+        }
+
+        try {
+            app.open(File("D:/DATA/file design/" + arr[i][j].idDesign + "flash" + ".tif"));
+        } catch (error) {
+            app.open(File("D:/DATA/file design/aaaa.tif"));
+
+        }
+        app.activeDocument.activeLayer.name = "1";
+        app.doAction("cropflashcolor", "auto xep file");
+        app.doAction("crop" + arr[i][j].name + "flash", "auto xep file");
+        app.doAction("stroke1", "auto xep file");
+
+        app.doAction("duplicate to khay flash", "auto xep file");
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        app.doAction("move to zero", "auto xep file");
+        // app.activeDocument.activeLayer.name = (j + 1) + " " + arr[i][j].name;
+        app.activeDocument.activeLayer.translate(xPosition, yPosition * (-1));
+        if (j > 0) app.activeDocument.activeLayer.merge();
+
+    }
+    app.activeDocument.activeLayer.name = "flash";
 
     // save file
-    app.activeDocument.duplicate("in " + (i + 1) + " ngay " + day, false);
     app.doAction("xoay 180", "auto xep file");
-    app.doAction("lightitup", "auto xep file");
-    app.doAction("cmyk ban in glass", "auto xep file");
+    app.activeDocument.duplicate("in lan 2 " + (i + 1) + " ngay " + day, false);
+    app.activeDocument.duplicate("in lan 1" + (i + 1) + " ngay " + day, false);
+
+    app.doAction("cmyk ban in flaseCase", "auto xep file");
+    app.activeDocument.activeLayer.remove();
+    app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.close();
+
+    app.doAction("cmyk ban in flaseCase 2", "auto xep file");
     app.activeDocument.saveAs(folder1, TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close();
     app.documents["khay.jpg"].close(SaveOptions.DONOTSAVECHANGES);
