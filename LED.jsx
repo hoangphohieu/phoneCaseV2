@@ -145,9 +145,9 @@ for (var i = 0; i <= arr.length - 1; i++) {
         }
 
         try {
-            app.open(File("D:/DATA/file design/" + arr[i][j].idDesign + ".tif"));
+            app.open(File("D:/DATA/file design/" + arr[i][j].idDesign + ".jpg"));
         } catch (error) {
-            app.open(File("D:/DATA/file design/aaaa.tif"));
+            app.open(File("D:/DATA/file design/aaaa.jpg"));
 
         }
         app.doAction("crop" + arr[i][j].name + "flash", "auto xep file");
@@ -199,7 +199,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
         try {
             app.open(File("D:/DATA/file design/" + arr[i][j].idDesign + "flash" + ".tif"));
         } catch (error) {
-            app.open(File("D:/DATA/file design/aaaa.tif"));
+            app.open(File("D:/DATA/file design/aaaa.jpg"));
 
         }
         app.activeDocument.activeLayer.name = "1";

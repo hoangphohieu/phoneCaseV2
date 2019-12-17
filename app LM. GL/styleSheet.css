@@ -1,9 +1,15 @@
 *{margin: 0;padding: 0}
 
+.file-design {
+    position: absolute;
+    left: 1rem;
+    top: 4rem;
+}
+
 label.input_exel_file.btn.btn-warning {
     position: absolute;
-    top: 100px;
-    left: 0;
+    top: 0.75rem;
+    left: 1rem;
 }
 
 button.btn.btn-primary.mb-5.absolute.inan {
@@ -14,11 +20,13 @@ button.btn.btn-primary.mb-5.absolute.inan {
 
 p.numberPosition {
     position: absolute;
-    right: 46%;
+    /* text-align: center; */
     bottom: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
     margin-bottom: -13px;
+    width: 100%;
+    left: 0;
 }
 
 a.name_aboutme {
@@ -76,33 +84,51 @@ p.design_idDesign_banTo {
 }
 
 p.code_day_excel {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    margin: 0;
+    position: absolute;
     text-align: center;
-    font-size: 1.7rem;
+    bottom: 1rem;
     font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 17px;
 }
 
 p.code_phone_case {
+    position: absolute;
     font-size: 1.8rem;
     text-align: center;
     font-weight: 500;
+    margin: 0;
+    bottom: 67px;
+    width: 100%;
+    left: 0;
 }
 
 span {}
 
 .code_design {
-    font-size: 214% !important;
+    font-size: 173% !important;
     padding: 5px;
     text-align: center;
     margin: 0;
     font-weight: 500;
     cursor: pointer;
+    line-height: 30px;
 }
 
 .mot_ban_to {
     padding-top: 5px;
     position: relative !important;
 }
-
+.po-relative{
+    position: relative;
+}
+.po-absolute{
+    position: absolute;
+}
 input.input_item_thua {
     padding: 3px;
     width: 50%;
