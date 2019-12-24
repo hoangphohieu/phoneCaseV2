@@ -145,9 +145,9 @@ for (var i = 0; i <= arr.length - 1; i++) {
         }
 
         try {
-            app.open(File("D:/DATA/file design/" + arr[i][j].idDesign + ".jpg"));
+            app.open(File("D:/DATA/file design/" + arr[i][j].idDesign + ".tif"));
         } catch (error) {
-            app.open(File("D:/DATA/file design/aaaa.jpg"));
+            app.open(File("D:/DATA/file design/aaaa.tif"));
 
         }
         app.doAction("crop" + arr[i][j].name, "auto xep file");
