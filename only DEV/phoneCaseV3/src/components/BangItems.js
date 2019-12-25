@@ -40,7 +40,7 @@ class Bang12Items extends Component {
                   <div>
 
                         <div className="container-fluid khoangcasch mt-5">
-                              <div className={"container "+((this.state.psdDone===true)?"psd_done":"")} style={{ width: (ban === "to") ? 1000 : 670 }}>
+                              <div className={"container-fluid "+((this.state.psdDone===true)?"psd_done":"")} style={{ width:1400}}>
                                     <div className="row border_khung">
                                           <div className="col-12 border_khung" style={{ height: 70 }}>
                                                 <h1  style={{fontSize:35}}>

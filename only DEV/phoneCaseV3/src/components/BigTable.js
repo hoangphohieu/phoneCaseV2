@@ -160,6 +160,7 @@ class BigTable extends Component {
                               || item.phoneCase.trim().toLowerCase().endsWith("ip 11 pro") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("i 11 pro") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone11 pro") === true
+                              || item.phoneCase.trim().toLowerCase().endsWith("iphone11pro") === true
                               || item.phoneCase.trim().toLowerCase().endsWith("iphone 11 pro") === true
                         ) return { ...item, phoneCase: "i11pro" }
 
@@ -382,7 +383,7 @@ class BigTable extends Component {
 
                   items = itemsFilter;
                   let pixel = this.state.phoneCase;
-                  items = _.orderBy(items, ['phoneCase', 'rePrint', 'idDesign'], ['asc', 'asc', 'desc']);
+                  items = _.orderBy(items, ['phoneCase', 'idClient', 'idDesign'], ['asc', 'asc', 'desc']);
                   items = items.map((item, key) => { return { ...item, stt: key + 1 } });
                   dataSortItems = items;    // lấy danh sách để in bảng 12 ra màn hình
                   items = items.map(item => { return { name: item.phoneCase, idDesign: item.idDesign.trim(), stt: item.stt, pixel: toPixel(item.phoneCase) } })
