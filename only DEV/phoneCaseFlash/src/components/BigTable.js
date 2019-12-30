@@ -15,9 +15,9 @@ class BigTable extends Component {
 
                   phoneCase: { // w và h tính theo pixcel
                         i6: { w: 791, h: 1630 },
-                        i7: { w: 791, h: 1630 },
+                        i7: { w: 780, h: 1630 },
                         i6plus: { w: 909, h: 1866 },
-                        i7plus: { w: 909, h: 1866 },
+                        i7plus: { w: 909, h: 1854 },
                         ix: { w: 815, h: 1689 },
                         ixs: { w: 815, h: 1689 },
                         ixr: { w: 862, h: 1748 },
@@ -41,8 +41,8 @@ class BigTable extends Component {
                         oneplus6: { w: 862, h: 1807 },
                         note10: { w: 850, h: 1783 },
                         note10plus: { w: 909, h: 1913 },
-                        i11pro: { w: 827, h: 1677 },
-                        i11: { w: 862, h: 1760 }, // sai
+                        i11: { w: 862, h: 1760 },
+                        i11pro: { w: 827, h: 1677 }, // sai
                         i11promax: { w: 886, h: 1831 },
                         hp20: { w: 815, h: 1736 },
                         khay: { w: 28346, h: 15354 }

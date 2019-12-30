@@ -42,7 +42,7 @@ class BigTable extends Component {
                         note10: { w: 850, h: 1783 },
                         note10plus: { w: 909, h: 1913 },
                         i11pro: { w: 827, h: 1677 },
-                        i11: { w: 862, h: 1760 }, // sai
+                        i11: { w: 862, h: 1760 },
                         i11promax: { w: 886, h: 1831 },
                         hp20: { w: 815, h: 1736 },
                         khay: { w: 28346, h: 15354 }

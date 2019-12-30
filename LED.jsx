@@ -65,6 +65,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
 
 
         app.open(File("D:/DATA/file design/khung.jpg"));
+        alert(arr[i][j].name);
         app.doAction("crop" + arr[i][j].name + "flash", "auto xep file");
         app.doAction("tao khung", "auto xep file");
         app.activeDocument.artLayers.add();
@@ -150,6 +151,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
             app.open(File("D:/DATA/file design/aaaa.tif"));
 
         }
+       
         app.doAction("crop" + arr[i][j].name + "flash", "auto xep file");
         app.doAction("merge layer", "auto xep file");
         app.doAction("duplicate to khay", "auto xep file");
